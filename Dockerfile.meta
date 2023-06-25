@@ -15,6 +15,6 @@ RUN apt update \
   && apt -y install tzdata \
   && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-COPY --from=build /opt/mate-simple/target/*-SNAPSHOT.jar /applications/mate-simple.jar
+COPY --from=build /opt/mate-simple/target/*-SNAPSHOT.jar /applications/fusion-simple.jar
 
-ENTRYPOINT ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 /applications/mate-simple.jar"]
+ENTRYPOINT ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 /applications/fusion-simple.jar"]

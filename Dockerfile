@@ -15,7 +15,7 @@ RUN apt update \
   && apt -y install tzdata \
   && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-COPY --from=build /opt/fusion-api/target/*-SNAPSHOT.jar /applications/fusion.jar
-COPY --from=build /opt/fusion-simple/target/*-SNAPSHOT.jar /applications/fusion-simple.jar
+COPY --from=build /opt/meta-api/target/*-SNAPSHOT.jar /applications/fusion.jar
+COPY --from=build /opt/meta-simple/target/*-SNAPSHOT.jar /applications/fusion-simple.jar
 
 ENTRYPOINT ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 /applications/fusion.jar --spring.profiles.active=test --server.port=8080"]
