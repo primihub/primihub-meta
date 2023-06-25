@@ -39,7 +39,7 @@ jobs:
     #     images: ${{ env.REGISTRY }}/${{ env.FUSION_IMAGE }}
     
     - name: Extract Docker metadata
-      id: metameta
+      id: metasimple
       uses: docker/metadata-action@v4
       with:
         images: ${{ env.REGISTRY }}/${{ env.META_IMAGE }}
@@ -60,5 +60,5 @@ jobs:
         file: ./Dockerfile.meta
         push: true
         platforms: linux/amd64,linux/arm64
-        tags: ${{ steps.metaweb.outputs.tags }}
-        labels: ${{ steps.metaweb.outputs.labels }}
+        tags: ${{ steps.metasimple.outputs.tags }}
+        labels: ${{ steps.metasimple.outputs.labels }}
