@@ -1,4 +1,4 @@
-use fusion;
+use meta;
 -- ----------------------------
 -- Table structure for fusion_resource
 -- ----------------------------
