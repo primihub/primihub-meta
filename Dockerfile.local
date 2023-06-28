@@ -6,7 +6,7 @@ RUN apt update \
   && apt -y install tzdata \
   && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-ADD mate-api/target/*-SNAPSHOT.jar /applications/mate.jar
-ADD mate-simple/target/*-SNAPSHOT.jar /applications/mate-simple.jar
+ADD meta-api/target/*-SNAPSHOT.jar /applications/meta.jar
+ADD meta-simple/target/*-SNAPSHOT.jar /applications/meta-simple.jar
 
-ENTRYPOINT ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 /applications/mate.jar --server.port=8080"]
+ENTRYPOINT ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 /applications/meta.jar --server.port=8080"]
