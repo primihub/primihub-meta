@@ -58,4 +58,4 @@ Before run, make sure that your service dependencies are available and the confi
 
 execute that the command,you can check the url:
     
-    http://localhost:8099/meta/healthConnection
+    http://localhost:8099/fusion/healthConnection
