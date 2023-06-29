@@ -1,0 +1,90 @@
+
+*cbp
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+.*.swp
+*.synctex
+*.pdf
+*.dvi
+*.a
+*.exe
+*.rdb
+*.0
+
+.vscode/
+
+# generated files
+/lib/
+/bin/
+
+*/CMakeFiles/
+/CMakeFiles/
+*.cmake
+CMakeCache.txt
+out/
+build/
+cmake-*/
+
+bazel-bin
+bazel-out
+bazel-testlogs
+bazel-primihub*
+
+log/
+
+*.pptx
+*.xlsx
+*.sty
+*.gz
+*.dtx
+
+x64/*
+.vs/*
+*/x64/*
+*/.vs/*
+*/*.user
+
+log.txt
+*/log.txt
+
+*.bin
+*.o
+*.psess
+*.vspx
+
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDEA
+.idea
+
+# macOS cache
+.DS_Store
+
+# python
+*.egg-info/
+*.pyc
+
+# sphinx .rst
+*.rst
+
+# dylib
+*.dylib
+*.so
+
+# output
+meta-api/target/
+meta-grpc/target/
+meta-simple/target/

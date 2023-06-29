@@ -45,11 +45,15 @@ or you can execute "init.sql" in your mysql management manually.
 
 
 ## Compile and Package
-run this command:
+#### run this command:
 
     mvn clean install -Dmaven.test.skip=true 
 
 As long as the finished infos show up, the project have been compiled and packaged successfully.
+
+#### compile with bazel
+
+    bazel build :java-maven --verbose_failures
 
 ## How to run
 Before run, make sure that your service dependencies are available and the configuration is correct.
