@@ -1,5 +1,5 @@
-# primihub fusion
-primihub fusion is based on spring boot,use maven to compile and package.
+# primihub meta
+primihub meta is based on spring boot,use maven to compile and package.
 ## Getting Started
 First of all ,when we run the project, we need some service dependencies like this:
 - [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
@@ -10,7 +10,7 @@ First of all ,when we run the project, we need some service dependencies like th
 ##Modify Configuration
 Now we should locate the next path:
 
-    ./fusion-api/src/main/resources/
+    ./meta-api/src/main/resources/
 
 edit the "application.yaml" and modify the configuration to be the configuration of service dependencies which you have deployed.
 
@@ -54,7 +54,7 @@ As long as the finished infos show up, the project have been compiled and packag
 ## How to run
 Before run, make sure that your service dependencies are available and the configuration is correct.
 
-    java -jar -Dfile.encoding=UTF-8 ./fusion-api/target/*-SNAPSHOT.jar --server.port=8099 --spring.cloud.nacos.discovery.server-addr=nacos:8848 --spring.cloud.nacos.discovery.namespace=demo --spring.cloud.nacos.config.server-addr=nacos:8848 --spring.cloud.nacos.config.namespace=demo
+    java -jar -Dfile.encoding=UTF-8 ./meta-api/target/*-SNAPSHOT.jar --server.port=8099 --spring.cloud.nacos.discovery.server-addr=nacos:8848 --spring.cloud.nacos.discovery.namespace=demo --spring.cloud.nacos.config.server-addr=nacos:8848 --spring.cloud.nacos.config.namespace=demo
 
 execute that the command,you can check the url:
     
