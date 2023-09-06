@@ -92,20 +92,24 @@ public class DataResourceConvert {
         }
         fusionResourceVo.setAvailable(1);
         if (fusionResource.getIsDel() == 0 && fusionResource.getResourceState() == 0){
-            if (fusionResource.getResourceAuthType().equals(AuthTypeEnum.PRIVATE.getAuthType()) && fusionResource.getOrganId().equals(globalId)){
+            if (fusionResource.getOrganId().equals(globalId)){
                 fusionResourceVo.setAvailable(0);
-            }
-            if (fusionResource.getResourceAuthType().equals(AuthTypeEnum.VISIBILITY.getAuthType())){
-                if (!StringUtils.isEmpty(fusionResource.getAuthOrgans()) && !StringUtils.isEmpty(globalId)){
-                    Set<String> authOrgansSet = Arrays.stream(fusionResource.getAuthOrgans().split(",")).collect(Collectors.toSet());
-                    authOrgansSet.add(fusionResource.getOrganId());
-                    if (authOrgansSet.contains(globalId)) {
-                        fusionResourceVo.setAvailable(0);
+            }else {
+                if (fusionResource.getResourceAuthType().equals(AuthTypeEnum.PRIVATE.getAuthType()) && fusionResource.getOrganId().equals(globalId)){
+                    fusionResourceVo.setAvailable(0);
+                }
+                if (fusionResource.getResourceAuthType().equals(AuthTypeEnum.VISIBILITY.getAuthType())){
+                    if (!StringUtils.isEmpty(fusionResource.getAuthOrgans()) && !StringUtils.isEmpty(globalId)){
+                        Set<String> authOrgansSet = Arrays.stream(fusionResource.getAuthOrgans().split(",")).collect(Collectors.toSet());
+                        authOrgansSet.add(fusionResource.getOrganId());
+                        if (authOrgansSet.contains(globalId)) {
+                            fusionResourceVo.setAvailable(0);
+                        }
                     }
                 }
-            }
-            if(fusionResource.getResourceAuthType().equals(AuthTypeEnum.PUBLIC.getAuthType())) {
-                fusionResourceVo.setAvailable(0);
+                if(fusionResource.getResourceAuthType().equals(AuthTypeEnum.PUBLIC.getAuthType())) {
+                    fusionResourceVo.setAvailable(0);
+                }
             }
         }
         fusionResourceVo.setOrganName(organName);
