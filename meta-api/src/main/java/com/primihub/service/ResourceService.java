@@ -200,4 +200,8 @@ public class ResourceService {
         }
 
     }
+
+    public BaseResultEntity getDataSets(Set<String> ids) {
+        return BaseResultEntity.success(dataSetRepository.getDataSetByIds(ids));
+    }
 }
