@@ -78,7 +78,7 @@ public class FusionResourceController {
     }
 
     @RequestMapping("getDataSets")
-    public BaseResultEntity getDataSets(Set<String> ids){
+    public BaseResultEntity getDataSets(@RequestBody Set<String> ids){
         return resourceService.getDataSets(ids);
     }
 
