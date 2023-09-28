@@ -125,6 +125,7 @@ public class ResourceService {
             log.info(JSONObject.toJSONString(dataSet));
             if (dataSet!=null && !StringUtils.isEmpty(dataSet.getId())){
                 dataSet.setHolder(1);
+                dataSet.setAccessInfo("");
                 DataSet d = dataSetRepository.getDataSetById(dataSet.getId());
                 if (d==null){
                     dataSetRepository.insertDataSet(dataSet);
@@ -184,6 +185,7 @@ public class ResourceService {
         try {
             for (DataSet dataSet : dataSets) {
                 dataSet.setHolder(1);
+                dataSet.setAccessInfo("");
                 DataSet d = dataSetRepository.getDataSetById(dataSet.getId());
                 if (d==null){
                     dataSetRepository.insertDataSet(dataSet);
@@ -197,5 +199,9 @@ public class ResourceService {
             return BaseResultEntity.failure(BaseResultEnum.FAILURE,e.getMessage());
         }
 
+    }
+
+    public BaseResultEntity getDataSets(Set<String> ids) {
+        return BaseResultEntity.success(dataSetRepository.getDataSetByIds(ids));
     }
 }

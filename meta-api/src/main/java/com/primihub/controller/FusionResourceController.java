@@ -1,8 +1,6 @@
 package com.primihub.controller;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.JSONValidator;
 import com.primihub.entity.DataSet;
 import com.primihub.entity.base.BaseResultEntity;
 import com.primihub.entity.base.BaseResultEnum;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @RequestMapping("fusionResource")
@@ -78,6 +75,11 @@ public class FusionResourceController {
     @RequestMapping("getTestDataSet")
     public BaseResultEntity getTestDataSet(String id){
         return resourceService.getTestDataSet(id);
+    }
+
+    @RequestMapping("getDataSets")
+    public BaseResultEntity getDataSets(@RequestBody Set<String> ids){
+        return resourceService.getDataSets(ids);
     }
 
     @PostMapping("batchSaveTestDataSet")
